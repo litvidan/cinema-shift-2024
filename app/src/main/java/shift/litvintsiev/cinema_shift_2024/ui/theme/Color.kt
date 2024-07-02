@@ -1,4 +1,4 @@
-package shift.litvintsiev.cinema.ui.theme
+package shift.litvintsiev.cinema_shift_2024.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

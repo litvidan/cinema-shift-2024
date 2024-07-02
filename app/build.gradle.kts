@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "shift.litvintsiev.cinema"
+    namespace = "shift.litvintsiev.cinema_shift_2024"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "shift.litvintsiev.cinema"
+        applicationId = "shift.litvintsiev.cinema_shift_2024"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

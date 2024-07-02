@@ -1,4 +1,4 @@
-package shift.litvintsiev.cinema
+package shift.litvintsiev.cinema_shift_2024
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,14 +11,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import shift.litvintsiev.cinema.ui.theme.CinemaTheme
+import shift.litvintsiev.cinema_shift_2024.ui.theme.Cinemashift2024Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CinemaTheme {
+            Cinemashift2024Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -41,7 +41,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    CinemaTheme {
+    Cinemashift2024Theme {
         Greeting("Android")
     }
 }

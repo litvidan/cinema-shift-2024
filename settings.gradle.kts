@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "cinema"
+rootProject.name = "cinema-shift-2024"
 include(":app")
  

@@ -1,4 +1,4 @@
-package shift.litvintsiev.cinema
+package shift.litvintsiev.cinema_shift_2024
 
 import org.junit.Test
 
