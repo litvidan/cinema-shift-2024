@@ -18,14 +18,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Cinemashift2024Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            CinemaHomeScreen()
+            //Cinemashift2024Theme {
+            //    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    //CinemaHomeScreen()
+             //    Greeting(
+            //            name = "Android",
+            //            modifier = Modifier.padding(innerPadding)
+            //        )
+          //      }
+         //   }
         }
     }
 }
