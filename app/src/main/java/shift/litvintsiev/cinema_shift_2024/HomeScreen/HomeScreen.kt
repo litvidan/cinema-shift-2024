@@ -1,4 +1,4 @@
-package shift.litvintsiev.cinema_shift_2024
+package shift.litvintsiev.cinema_shift_2024.HomeScreen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,17 +8,21 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ConfirmationNumber
 import androidx.compose.material.icons.filled.Movie
 import androidx.compose.material.icons.filled.Person
-import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,22 +30,22 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-
+import shift.litvintsiev.cinema_shift_2024.bottom_bar.CinemaBottomBar
 
 @Composable
-fun CinemaHomeScreen() {
+fun CinemaHomeScreen(modifier: Modifier) {
     Scaffold(
-        bottomBar = { CinemaBottomBar() }
+        bottomBar = { CinemaBottomBar() },
     ) { paddingValues ->
         Column(
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxSize()
                 .padding(paddingValues)
         ) {
             CinemaMovieList(
                 movies = listOf(
-                    Movie("Movie 1", "Description 1", "https://example.com/movie1.jpg"),
-                    Movie("Movie 2", "Description 2", "https://example.com/movie2.jpg"),
+                    //Movie("Movie 1", "Description 1", "https://example.com/movie1.jpg"),
+                    //Movie("Movie 2", "Description 2", "https://example.com/movie2.jpg"),
                     // Добавьте другие фильмы в список
                 )
             )
@@ -51,11 +55,11 @@ fun CinemaHomeScreen() {
 
 @Composable
 fun CinemaMovieList(movies: List<Movie>) {
-    //LazyColumn {
-      //  items(movies) { movie ->
-        //    CinemaMovieCard(movie)
-        //}
-    //}
+    LazyColumn {
+        items(movies) { movie ->
+            CinemaMovieCard(movie)
+        }
+    }
 }
 
 @Composable
@@ -80,29 +84,6 @@ fun CinemaMovieCard(movie: Movie) {
     }
 }
 
-@Composable
-fun CinemaBottomBar() {
-    BottomNavigation {
-        BottomNavigationItem(
-            selected = true,
-            onClick = { /* Обработка нажатия на "Афишу" */ },
-            icon = { Icon(Icons.Filled.Movie, contentDescription = "Афиша") },
-            label = { Text("Афиша") }
-        )
-        BottomNavigationItem(
-            selected = false,
-            onClick = { /* Обработка нажатия на "Билеты" */ },
-            icon = { Icon(Icons.Filled.ConfirmationNumber, contentDescription = "Билеты") },
-            label = { Text("Билеты") }
-        )
-        BottomNavigationItem(
-            selected = false,
-            onClick = { /* Обработка нажатия на "Профиль" */ },
-            icon = { Icon(Icons.Filled.Person, contentDescription = "Профиль") },
-            label = { Text("Профиль") }
-        )
-    }
-}
 
 data class Movie(
     val title: String,
